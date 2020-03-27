@@ -41,19 +41,19 @@
                                 <div class="dw-user-box">
                                     <div class="u-img"><img src="<?php echo $this->config->item('PATH_ASSET_IMAGE'); ?>avatar/user_avatar.png" alt="user"></div>
                                     <div class="u-text">
-                                        <h4><?php echo $this->session->userdata('sess_nama'); ?></h4>
-                                        <p class="text-muted">NIK : <?php echo $this->session->userdata('sess_nik'); ?></p><a href="" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                        <h4><?php echo $this->session->userdata('sess_nama_receivingpur'); ?></h4>
+                                        <p class="text-muted">NIK : <?php echo $this->session->userdata('sess_nik_receivingpur'); ?></p><a href="javascript:void()" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
                                     </div>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                            <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                            <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);" id="form_logout_top"><i class="fa fa-power-off"></i> Logout</a></li>
+                            <li><a href="javascript:void(0)" id="form_logout_top"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </div>
                 </li>

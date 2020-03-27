@@ -17,7 +17,7 @@ class m_login extends CI_Model {
 		$this->query_bcd_operator 	= $this->config->item('QUERY_BCD_OPERATOR');		
 	}
 
-	function login($nik) {		
-		return $this->conn_dwasys->get_where($this->query_bcd_operator, array('NIK'=>$nik));
+	function login($nik) {
+		return $this->conn_dwasys->get_where($this->query_bcd_operator, array('NIK'=>$nik, 'Dept_Alias'=>'PUR'));
 	}
 }

@@ -13,7 +13,9 @@
         <!-- Favicon icon -->
         <?php require_once('_partials/_favicon.php'); ?>
 
-        <title>Garansi Proses | <?php echo $title; ?></title>
+        <title>Receiving BPP & CER Purchasing | <?php echo $title; ?></title>
+
+        <base href="<?php echo base_url(); ?>" />
 
         <?php require_once('_partials/_styles.php'); ?>
         
@@ -67,7 +69,10 @@
         <?php echo $custom_scripts; ?>
 
         <script type="text/javascript">
-            $(document).ready(function() {  
+            $(document).ready(function() {
+                
+                $(".select2").select2();
+
                 $("body").on("click", "#form_logout_top, #form_logout_side", function() {
                     swal({
                         title               : 'Logout ?',

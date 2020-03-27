@@ -120,7 +120,7 @@ $db['conn_dwasys'] = array(
 
 $db['conn_dwafinacct'] = array(
     'dsn'           => '',
-    'hostname'      => '192.168.0.4',
+    'hostname'      => '192.168.0.6',
     'port'          => 1433,
     'username'      => 'sa',
     'password'      => 'myideaS',

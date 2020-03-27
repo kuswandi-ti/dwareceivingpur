@@ -12,7 +12,7 @@
         <!-- Favicon icon -->
         <?php require_once('_partials/_favicon.php'); ?>
 
-        <title>Garansi Proses</title>
+        <title>Receiving BPP & CER Purchasing</title>
 
         <?php require_once('_partials/_styles.php'); ?>
         
@@ -34,7 +34,7 @@
 	        <div class="login-register" style="background-image:url(<?php echo $this->config->item('PATH_ASSET_TEMPLATE'); ?>assets/images/background/login-register.jpg);">	        	
 	            <div class="login-box card">
 	                <div class="card-body">
-	                	<img src="<?php echo $this->config->item('PATH_ASSET_TEMPLATE'); ?>assets/images/background/guarantee-logo.png" style="display: block; margin-left: auto; margin-right: auto;">
+	                	<img src="<?php echo $this->config->item('PATH_ASSET_TEMPLATE'); ?>assets/images/background/receiving-logo.png" style="display: block; margin-left: auto; margin-right: auto;">
 	                    <form class="form-horizontal" id="form_login" action="#">
 	                        <h2 class="box-title m-b-20 text-center"><br />Log In</h2>
 	                        <div class="form-group">
@@ -57,11 +57,11 @@
 	                </div>
 	            </div>
 	            <p>&nbsp;</p>
-	            <p>&nbsp;</p>
+	            <p>&nbsp;</p>				
 	        </div>
 	    </section>
     
     	<?php require_once('_partials/_scripts.php'); ?>
-        <?php echo $custom_scripts; ?>    
+        <?php echo $custom_scripts; ?>
 	</body>
 </html>

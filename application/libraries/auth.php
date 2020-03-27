@@ -21,13 +21,13 @@ class Auth {
 	
 	// untuk validasi di setiap halaman yang mengharuskan authentikasi
 	function restrict() {
-		if(empty($this->CI->session->userdata('sess_nik'))) {
+		if(empty($this->CI->session->userdata('sess_nik_receivingpur'))) {
 			redirect('');
 		}
 	}
 
 	function restrict_login() {
-		if($this->CI->session->userdata('sess_nik') != '') {
+		if($this->CI->session->userdata('sess_nik_receivingpur') != '') {
 			redirect('home');
 		}
 	}

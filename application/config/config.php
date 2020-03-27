@@ -326,7 +326,7 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '67a2d39b396d79fbf2b066ea9a9d32c9_XXXX'; // MD5 dari 'garansi_proses' & '_XXXX'
+$config['encryption_key'] = 'c4a4dbda613f39da394b7c14f1893f13'; // MD5 dari 'receiving_pur'
 
 /*
 |--------------------------------------------------------------------------
@@ -381,7 +381,7 @@ $config['encryption_key'] = '67a2d39b396d79fbf2b066ea9a9d32c9_XXXX'; // MD5 dari
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
-$config['sess_expiration'] = 0; // 31536000; //7200; 31536000 1 tahun (365 hari * 24 jam * 60 menit * 60 detik) * 5 = 157680000
+$config['sess_expiration'] = 7200; // 31536000; //7200; 31536000 1 tahun (365 hari * 24 jam * 60 menit * 60 detik) * 5 = 157680000
 $config['sess_save_path'] = sys_get_temp_dir(); // http://www.blog.teamguru.in/2018/02/10/class-ci_session_files_driver-contains-1-abstract-method-and-must-therefore-be-declared-abstract-or-implement/
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
@@ -531,6 +531,11 @@ $config['proxy_ips'] = '';
 */
 date_default_timezone_set('Asia/Jakarta');
 
+$config['EMAIL_PORT']							= 25;
+$config['EMAIL_PUR_RECEIVING_FROM_HOST']		= '192.168.0.23';
+$config['EMAIL_PUR_RECEIVING_FROM_EMAIL']		= 'pur.ordering@dwa.co.id';
+$config['EMAIL_PUR_RECEIVING_FROM_NAME']		= 'PURCHASING - RECEIVING';
+
 /* PATH ASSET */
 $config['PATH_ASSET_TEMPLATE'] 					= 'assets/template/materialpro/';
 $config['PATH_ASSET_VENDOR'] 					= 'assets/vendor/';
@@ -540,6 +545,7 @@ $config['PATH_ASSET_IMAGE']			 			= 'assets/img/';
 /* STRING FORMAT */
 $config['FORMAT_NOW_DATETIME_TO_INSERT'] 		= date('Y-m-d H:i:s');
 $config['FORMAT_NOW_DATE_TO_INSERT'] 			= date('Y-m-d');
+$config['FORMAT_NOW_TIME_TO_INSERT'] 			= date('H:i:s');
 $config['FORMAT_DATETIME_TO_INSERT'] 			= 'Y-m-d H:i:s';
 $config['FORMAT_DATETIME_TO_DISPLAY'] 			= 'd-m-Y H:i:s';
 $config['FORMAT_DATE_TO_INSERT'] 				= 'Y-m-d';
@@ -552,30 +558,30 @@ $config['CONN_NAME_DWAFINACCT']					= 'conn_dwafinacct';
 $config['CONN_NAME_DWASYS_RESCUE']				= 'conn_dwasys_rescue';
 
 /* TABLE & QUERY - DWASYS */
+$config['TABLE_MST_EMAIL_REQ_RR']				= 'TMst_Pur_Email_Requester_RR';
+$config['TABLE_TMP_PO_VS_RR']					= 'TTmp_Pur_ReceivingReport_BPP_CER';
+$config['TABLE_TTX_RCV_BPP_HDR']				= 'TTrxHdr_PUR_RCBRG_PO';
+$config['TABLE_TTX_RCV_BPP_DTL']				= 'TTrxDtl_PUR_RCBRG_PO';
+$config['TABLE_TTX_RCV_CER_HDR']				= 'TTrxHdr_Pur_ReceivingReport_CER';
+$config['TABLE_TTX_RCV_CER_DTL']				= 'TTrxDtl_Pur_ReceivingReport_CER';
+$config['TABLE_TRX_RRR_HDR']					= 'TTrxHdr_PUR_RCBRG_Requester';
+$config['TABLE_TRX_RRR_DTL']					= 'TTrxDtl_PUR_RCBRG_Requester';
 $config['QUERY_BCD_OPERATOR']					= 'Q_BCD_Operator';
-$config['QUERY_TRX_SALES_ORDER_DTL']			= 'QView_Sls_SalesOrderDetail';
-$config['QUERY_TRX_OUTSTANDING_SO_SJ']			= 'QView_Sls_SOSJOutstandingAll';
-$config['QUERY_TRX_OUTSTANDING_SJ_LOADING']		= 'QView_Sls_ResumeLoadingADM';
-$config['TABLE_MST_VEHICLE']					= 'T_Vehicle';
-$config['TABLE_MST_DRIVER']						= 'T_Driver';
-$config['TABLE_TRX_SALES_ORDER_HDR']			= 'TTrxHdr_Sls_SalesOrder';
-$config['TABLE_TRX_SURAT_JALAN_HDR']			= 'TTrxHdr_Sls_SuratJalan';
-$config['TABLE_TRX_SURAT_JALAN_DTL']			= 'TTrxDtl_Sls_SuratJalan';
-$config['TABLE_TRX_LOADING']					= 'T_Loading';
-
-/* TABLE & QUERY - MYSQL */
-$config['TABLE_TMP_SCAN_DN']					= 'tbl_tmp_sls_garansiproses_scandn';
-$config['TABLE_TMP_SCAN_KANBAN']				= 'tbl_tmp_sls_garansiproses_scankanban';
-$config['TABLE_TMP_SCAN_TAGOK']					= 'tbl_tmp_sls_garansiproses_scantagok';
-$config['TABLE_TMP_SCAN_DN_LOADING']			= 'tbl_tmp_sls_garansiproses_scandn_loading';
-$config['TABLE_MST_MACHINE_PART']				= 'tbl_mst_sls_garansiproses_machinepartcode';
-$config['TABLE_TRX_PACKING']					= 'tbl_trx_sls_garansiproses_packing';
+$config['QUERY_RCBRG_HDR'] 						= 'QView_Pur_Hdr_Union_BPPQ_CERQ';
+$config['QUERY_OS_PO_RR_HDR_BPP']				= 'QView_Browse_PO_vs_RR_BPP';
+$config['QUERY_OS_PO_RR_HDR_CER']				= 'QView_Trx_Pur_PurchaseOrder_Hdr_Browse_CER'; //'QView_Browse_PO_vs_RR_CER';
+$config['QUERY_GET_DATA_PO_BPP']				= 'QBrows_PUR_RCBRG_PO_Barang';
+$config['QUERY_GET_DATA_PO_CER']				= 'QView_Trx_Pur_OS_PO_vs_RR_Dtl_2_CER';
+$config['QUERY_PRINT_RRR']						= 'QRpt_Pur_RRR';
 
 /* TABLE COUNTER */
 $config['TABLE_COUNTER_DOCNUMBER'] 				= 'TSys_CounterDocNumber';
 $config['TABLE_COUNTER_SYSID'] 					= 'TSys_CounterSysId';
+$config['TABLE_COUNTER_DOCNUMBER_DWAFINACCT']	= 'Counter_DocNumber';
+$config['TABLE_COUNTER_SYSID_DWAFINACCT'] 		= 'Counter_SysId';
 
 /* TRX NAME */
-$config['TRX_NAME_SURAT_JALAN']					= 'Surat_Jalan';
-$config['TRX_NAME_LOADING']						= 'T_Loading';
+$config['TRX_NAME_RECEIVE_BPP']					= 'TTrxHdr_PUR_RCBRG_PO ';
+$config['TRX_NAME_RECEIVE_CER']					= 'RR_CER';
+$config['TRX_NAME_RECEIVE_REQ']					= 'RRRequester_';
 /* -------------------------------------------------------------------------- */
